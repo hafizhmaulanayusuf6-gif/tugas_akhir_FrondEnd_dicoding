@@ -10,15 +10,19 @@
   --bg-card: #FFFFFF;
 
   --text-dark: #09090B;
-  --text-muted: #71717A;
+  --text-muted: #FFFF;
 
   --accent-blue: #2563EB;
   --accent-light: #EFF6FF;
 
-  --color-income: #10B981;
+  --bg-saldo: linear-gradient(180deg, #4FB3F6 0%, #108EE9 100%);
+  --color-income: #FFFF;
   --bg-income: #ECFDF5;
-  --color-expense: #F43F5E;
-  --bg-expense: #FFF1F2;
+  --color-expense: #FFFFFF;
+  --bg-expense: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);
+
+  --btn-ubah: #3fdb30;
+  --btn-hapus: #d62424;
 
   --border-light: #E4E4E7;
 
@@ -72,12 +76,43 @@ body {
 }
 
 /* Kartu dasar yang dipakai bersama di semua section */
-.tracker-summary__balance,
-.tracker-summary__stat,
+
+
 .tracker-form-section__card,
 .tracker-search,
 .tracker-transaction-list {
   background: var(--bg-card);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-light);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tracker-summary__balance {
+  background: var(--bg-saldo);
+  color: #FFFFFF;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-light);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tracker-summary__stat {
+  background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-light);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tracker-summary__stat_expense {
+  background: var(--bg-expense);
   border-radius: var(--card-radius);
   border: 1px solid var(--border-light);
   padding: var(--card-padding);
@@ -153,10 +188,6 @@ body {
   color: var(--text-muted);
   letter-spacing: 0.05em;
   margin-bottom: 0.75rem;
-}
-
-.tracker-summary__balance {
-  background: linear-gradient(145deg, var(--bg-card) 40%, var(--accent-light) 100%);
 }
 
 .tracker-summary__balance-amount {
@@ -297,10 +328,10 @@ body {
 }
 
 .tracker-transaction-list__title {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-dark);
   letter-spacing: 0.05em;
 }
 
@@ -412,6 +443,32 @@ body {
   margin-top: 1rem;
 }
 
+/*btn ubah tipe dan hapus*/
+.btn-ubah {
+  background-color: var(--btn-ubah);
+  color: var(--text-muted);
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  padding: 10px;
+  margin: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.btn-hapus {
+  background-color: var(--btn-hapus);
+  color: var(--text-muted);
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  padding: 10px;
+  margin: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.title-transaksi {
+  font-size: 1.3rem;
+}
 /* =========================================================
    RESPONSIVE — TABLET (≤ 1024px)
    ========================================================= */
